@@ -8,22 +8,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Phudu:wght@400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
     <h1>Run</h1>
-    <form action="">
-        <div class="container">
-            <input type="button" value="PLAY" class="play">
-        </div>
-    </form>
-    <div class="player">
-        <img src="idle1.png" alt="player" class="idlePlayer">
-        <div class="obstacle"></div>
-    </div>
-    <hr>
-
+    <canvas id="canvas" height="600" width="1500">
+        <img src="./idle1.png" alt="" id="player">
+    </canvas>
 
 </body>
 

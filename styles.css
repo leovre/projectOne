@@ -1,53 +1,25 @@
-body {
-    background-color: blue;
-    margin: 0;
-    padding: 0;
-    background-image: url(./game_background_1.png);
-    background-position: center;
-    background-size: cover;
-    /* overflow: hidden; */
+*{
+    box-sizing: border-box;
 }
 
-h1 {
-    margin-top: 50px;
-    color: white;
-    text-align: center;
-    font-size:4em;
-}
-
-.container {
+body{
+    background-color:#00b4d8;
+    color: #403d39;
+    font-family: 'Phudu', cursive;
+    width: 100vw;
+    font-weight: 500;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10em
+    margin:0;
 }
 
-.play {
-    border: 2px solid white;
-    color: white;
-    background-color: transparent;
-    padding: 15px;
-    transition: background-color 0.5s;
-    border-radius:1em;
-    font-size: 1.5em;
-    font-weight: 600;
+#canvas{
+    border-radius: 5px;
+    background-image: url(./game_background_1.png);
+    background-position: center;
+    background-size: contain;
 }
 
-.play:hover {
-    background-color: black;
-}
-
-.player {
-    margin: 30em 0 0 5em;
-}
-
-img {
-    width: 45px;
-    height: 50px;
-}
-
-hr {
-    border: 2px solid black;
-
-}
