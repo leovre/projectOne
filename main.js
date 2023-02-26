@@ -11,6 +11,8 @@ let obstacleSpeed = 12;
 let score = 0;
 let scoreIncrement = 0;
 let canScore = true;
+const card = document.querySelector(".card");
+const cardScore = document.getElementById("card-score");
 
 class Player {
     constructor(x, y) {
@@ -47,6 +49,36 @@ class Player {
 }
 
 let character = new Player(100, 505);
+
+function startGame() {
+    character = new Player(150, 450, 50, "black");
+    arrayBlocks = [];
+    score = 0;
+    scoreIncrement = 0;
+    canScore = true;
+    presetTime = 1000;
+}
+
+function restartGame(button) {
+    card.style.display = "none";
+    button.blur();
+    startGame();
+    requestAnimationFrame(animate);
+}
+
+function drawScore() {
+    ctx.font = "80px Arial";
+    ctx.fillStyle = "black"
+    let scoreString = score.toString();
+    let xOffset = ((scoreString.length - 1) * 20);
+    ctx.fillText(scoreString, 280 - xOffset, 100);
+}
+function isPastBlock(player, block) {
+    return (
+        player.x + (player.size / 2) > block.x + (block.size / 4) &&
+        player.x + (player.size / 2) < block.x + (block.size / 4) * 3
+    )
+}
 
 class Obstacles {
     constructor(speed) {
@@ -122,6 +154,7 @@ function animate() {
     animationID = requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBackgroundLine();
+    drawScore()
     character.draw();
     arrayBlocks.forEach(function (arrayBlock) {
         // setInterval(arrayBlock.slide, 1000);
@@ -129,9 +162,20 @@ function animate() {
         console.log(arrayBlock)
         if (obstacleCollision(character, arrayBlock)) {
             cancelAnimationFrame(animationID);
-            console.log('hit');
+            cardScore.textContent = score;
+            card.style.display = "block";
         }
 
+        if (isPastBlock(character, arrayBlock) && canScore) {
+            canScore = false;
+            score++;
+        }
+
+        if ((arrayBlock.x + arrayBlock.size) <= 0) {
+            setTimeout(() => {
+                arrayBlocks.splice(index, 1);
+            }, 0)
+        }
 
 
 

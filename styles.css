@@ -1,9 +1,9 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    background-color:#00b4d8;
+body {
+    background-color: #00b4d8;
     color: #403d39;
     font-family: 'Phudu', cursive;
     width: 100vw;
@@ -13,13 +13,68 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin:0;
+    margin: 0;
 }
 
-#canvas{
+#canvas {
     border-radius: 5px;
     background-image: url(./game_background_1.png);
     background-position: center;
     background-size: contain;
 }
 
+h1 {
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    width: 500px;
+    height: 190px;
+    border-radius: 4px;
+    animation: cardIn 1s forwards;
+    display: none;
+}
+
+.card>p {
+    font-size: 50px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+.card>button {
+    outline: none;
+    color: white;
+    border: none;
+    background-color: #1a8cff;
+    padding: 10px;
+    width: 90%;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@keyframes cardIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
