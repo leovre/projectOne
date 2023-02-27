@@ -182,11 +182,11 @@ function animate() {
             score++;
         }
 
-        if ((arrayBlock.x + arrayBlock.size) <= 0) {
-            setTimeout(() => {
-                arrayBlocks.splice(index, 1);
-            }, 0)
-        }
+        // if ((arrayBlock.x + arrayBlock.size) <= 0) {
+        //     setTimeout(() => {
+        //         arrayBlocks.splice(index, 1);
+        //     }, 0)
+        // }
 
 
 

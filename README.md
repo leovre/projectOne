@@ -1,19 +1,20 @@
-PROJECT 1: Endless runner
+PROJECT 1: Infinite Runner
 
 UX/UI:
-user will click the play button, it will disappear, and a score number will replace the play button.
+When the website is launched, the game will start automatically. 
 
-user will use up arrow to jump over obstacles that will come towards the player. 
+The user will use space to jump over obstacles that will come towards the player. 
 
-the longer the game goes(the higher the score number), the faster the obstacles that will come to the player.
+if user gets hit by one of the obstacles, the game will end and the score will be displayed to the player while having the option to restart the game. 
 
-if user gets hit by one of the obstacles, the game will end and the score will be displayed to the player. 
+The user cannot use any other keys other than the space bar to jump.
 
+when the game restarts, scores will be reset and (future feature) the speed will go back to default. 
 
 FEATURES TO ADD: 
 use the down arrow to slide and avoid other type of obstacles. 
 use side keys to move around the arena.
-use weapon to slay down other creatures.
+use weapon to slay mobs.
 
 
 
