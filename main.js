@@ -1,6 +1,8 @@
 //declaring varables 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const card = document.querySelector(".card");
+const cardScore = document.getElementById("card-score");
 let player = document.getElementById('player');
 let playerJump = document.getElementById('playerJump');
 let obstacleImg = document.getElementById('spike-obstacle')
@@ -11,8 +13,6 @@ let obstacleSpeed = 12;
 let score = 0;
 let scoreIncrement = 0;
 let canScore = true;
-const card = document.querySelector(".card");
-const cardScore = document.getElementById("card-score");
 
 class Player {
     constructor(x, y) {
@@ -51,12 +51,13 @@ class Player {
 let character = new Player(100, 505);
 
 function startGame() {
-    character = new Player(150, 450, 50, "black");
+    character = new Player(100, 505);
     arrayBlocks = [];
     score = 0;
     scoreIncrement = 0;
     canScore = true;
     presetTime = 1000;
+    obstacleSpeed=12;
 }
 
 function restartGame(button) {
@@ -71,12 +72,12 @@ function drawScore() {
     ctx.fillStyle = "black"
     let scoreString = score.toString();
     let xOffset = ((scoreString.length - 1) * 20);
-    ctx.fillText(scoreString, 280 - xOffset, 100);
+    ctx.fillText(scoreString, 730 - xOffset, 100);
 }
 function isPastBlock(player, block) {
     return (
-        player.x + (player.size / 2) > block.x + (block.size / 4) &&
-        player.x + (player.size / 2) < block.x + (block.size / 4) * 3
+        player.x + (player.width / 2) > block.x + (block.width / 4) &&
+        player.x + (player.width / 2) < block.x + (block.width / 4) * 3
     )
 }
 
@@ -147,7 +148,16 @@ function obstacleCollision(player, block) {
         player.y + player.height < block.y
     )
 }
-
+// function increaseSpeed() {
+//     if (scoreIncrement + 10 === score) {
+//         scoreIncrement === score;
+//         obstacleSpeed++;
+//         presetTime >= 100 ? presetTime -= 100 : presetTime = presetTime / 2;
+//         arrayBlocks.forEach(block => {
+//             block.slideSpeed = obstacleSpeed;
+//         });
+//     }
+// }
 //console.log(enemy.size);
 
 function animate() {
@@ -156,6 +166,7 @@ function animate() {
     drawBackgroundLine();
     drawScore()
     character.draw();
+    //increaseSpeed();
     arrayBlocks.forEach(function (arrayBlock) {
         // setInterval(arrayBlock.slide, 1000);
         arrayBlock.slide();
@@ -183,6 +194,7 @@ function animate() {
 
 
 }
+
 
 
 
