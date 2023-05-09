@@ -57,7 +57,7 @@ function startGame() {
     scoreIncrement = 0;
     canScore = true;
     presetTime = 1000;
-    obstacleSpeed=12;
+    obstacleSpeed = 12;
 }
 
 function restartGame(button) {
@@ -105,7 +105,7 @@ class Obstacles {
 }
 
 
-let enemy = new Obstacles(obstacleSpeed)
+// let enemy = new Obstacles(obstacleSpeed)
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -194,7 +194,6 @@ function animate() {
 
 
 }
-
 
 
 
